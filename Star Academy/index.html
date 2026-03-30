@@ -1,0 +1,118 @@
+<nav class="navbar">
+    <div class="logo">⭐ Star Academy</div>
+    <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Academy</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+</head>
+<script>
+    // Smooth scroll (for internal links if used)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href"))
+                .scrollIntoView({ behavior: "smooth" });
+        });
+    });
+
+    // Sticky navbar effect
+    window.addEventListener("scroll", function () {
+        const nav = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+            nav.classList.add("sticky");
+        } else {
+            nav.classList.remove("sticky");
+        }
+    });
+
+    // Admission popup
+    function openForm() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closeForm() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    // Fake submit success
+    function submitForm(event) {
+        event.preventDefault();
+        alert("Application submitted successfully 🎓");
+        closeForm();
+    }
+</script>
+
+<body>
+
+
+    <div class="logo-box">
+        <!-- COOL LOGO (SVG) -->
+        <svg class="logo-icon" viewBox="0 0 100 100">
+            <polygon points="50,5 61,35 95,35 67,57 78,90 50,70 22,90 33,57 5,35 39,35" />
+        </svg>
+
+        <div class="logo-text">Star Academy</div>
+    </div>
+
+    <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    </nav>
+
+    <!-- HERO SECTION WITH REAL SCHOOL IMAGE -->
+    <section class="hero">
+
+        <div class="hero-overlay">
+
+            <h1>Shaping Future Leaders</h1>
+            <p>Excellence • Discipline • Innovation</p>
+
+            <a href="admissions.html" class="btn">Apply Now</a>
+
+        </div>
+
+    </section>
+
+    <!-- QUICK INFO -->
+    <section class="intro">
+        <h2>Welcome to Star Academy</h2>
+        <p>
+            A top private institution committed to academic excellence and student success.
+        </p>
+    </section>
+    <div id="popup" class="popup">
+
+        <div class="popup-content">
+
+            <h2>Apply to Star Academy</h2>
+
+            <form onsubmit="submitForm(event)">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Why do you want to join?" required></textarea>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+
+            <br>
+            <button onclick="closeForm()" class="btn">Close</button>
+
+        </div>
+
+    </div>

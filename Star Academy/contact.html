@@ -1,0 +1,70 @@
+<head>
+    <title>Contact - Star Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">⭐ Star Academy</div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="page">
+        <h1>Contact Us</h1>
+
+        <p>Email: info@staracademy.com</p>
+        <p>Phone: +254 705 980770</p>
+
+        <form>
+            <input type="text" placeholder="Your Name"><br><br>
+            <input type="email" placeholder="Your Email"><br><br>
+            <textarea placeholder="Your Message"></textarea><br><br>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+</body>
+
+</html>
+<script>
+    // Smooth scroll (for internal links if used)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href"))
+                .scrollIntoView({ behavior: "smooth" });
+        });
+    });
+
+    // Sticky navbar effect
+    window.addEventListener("scroll", function () {
+        const nav = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+            nav.classList.add("sticky");
+        } else {
+            nav.classList.remove("sticky");
+        }
+    });
+
+    // Admission popup
+    function openForm() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closeForm() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    // Fake submit success
+    function submitForm(event) {
+        event.preventDefault();
+        alert("Application submitted successfully 🎓");
+        closeForm();
+    }
+</script>

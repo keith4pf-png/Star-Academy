@@ -1,0 +1,72 @@
+<head>
+    <title>About - Star Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar">
+        <div class="logo">⭐ Star Academy</div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="page">
+        <h1>About Star Academy</h1>
+
+        <p>
+            Star Academy is a leading private institution in Nairobi committed to academic excellence, discipline, and
+            holistic student development.
+        </p>
+
+        <h3>Our Mission</h3>
+        <p>To nurture disciplined, innovative, and successful students.</p>
+
+        <h3>Our Vision</h3>
+        <p>To be a top-performing institution in Kenya and beyond.</p>
+    </section>
+
+</body>
+
+</html>
+<script>
+    // Smooth scroll (for internal links if used)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href"))
+                .scrollIntoView({ behavior: "smooth" });
+        });
+    });
+
+    // Sticky navbar effect
+    window.addEventListener("scroll", function () {
+        const nav = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+            nav.classList.add("sticky");
+        } else {
+            nav.classList.remove("sticky");
+        }
+    });
+
+    // Admission popup
+    function openForm() {
+        document.getElementById("popup").style.display = "flex";
+    }
+
+    function closeForm() {
+        document.getElementById("popup").style.display = "none";
+    }
+
+    // Fake submit success
+    function submitForm(event) {
+        event.preventDefault();
+        alert("Application submitted successfully 🎓");
+        closeForm();
+    }
+</script>
